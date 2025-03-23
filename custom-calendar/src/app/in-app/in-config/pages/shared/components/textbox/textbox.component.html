@@ -1,0 +1,10 @@
+<kendo-textbox
+  class="text-box"
+  placeholder="Cai nay la text box"
+  [readonly]="false"
+  [title]="value"
+  [(ngModel)]="value"
+  (ngModelChange)="onInputChange($event)"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+></kendo-textbox>

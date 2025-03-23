@@ -1,0 +1,12 @@
+<kendo-textarea
+  class="text-area"
+  placeholder="Cai nay la textarea"
+  [rows]="3"
+  resizable="vertical"
+  [readonly]="false"
+  [title]="value"
+  [(ngModel)]="value"
+  (ngModelChange)="onInputChange($event)"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+></kendo-textarea>

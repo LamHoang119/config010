@@ -1,0 +1,9 @@
+<!-- DATE PICKER -->
+<kendo-datepicker
+  [disabledDates]="disablePastDates"
+  calendarType="classic"
+>
+  <ng-template kendoCalendarHeaderTitleTemplate let-date>
+    {{ date | monthFormat }}
+  </ng-template>
+</kendo-datepicker>

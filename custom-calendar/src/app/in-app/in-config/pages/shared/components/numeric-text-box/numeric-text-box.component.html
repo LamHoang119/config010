@@ -1,0 +1,12 @@
+<kendo-numerictextbox
+  class="numer"
+  format="##"
+  placeholder="day la numer"
+  [value]="valueNumer"
+  title="value"
+  [readonly]="false"
+  [(ngModel)]="valueNumer"
+  (ngModelChange)="onInputChange($event)"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+></kendo-numerictextbox>

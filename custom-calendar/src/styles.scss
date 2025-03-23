@@ -1,0 +1,197 @@
+:root {
+  --kendo-color-base-hover: none;
+  kendo-datepicker,
+  .k-calendar {
+    font-size: 12px;
+    font-family: "Mulish", serif;
+    .k-today {
+      border-radius: 999px;
+      color: #26282e;
+      background: #f5f6f8;
+    }
+  }
+
+
+  .k-input {
+    align-items: center;
+    flex-direction: row-reverse;
+    max-width: 140px;
+    background: none;
+  }
+  .datetime-picker-container {
+    top: 10px;
+    position: relative;
+    .k-input {
+      max-width: 195px;
+    }
+  }
+
+  .k-input-md .k-input-inner {
+    padding-left: 3px;
+  }
+  .k-button-solid-base {
+    background: none;
+  }
+  .k-calendar-nav-today {
+    display: none;
+  }
+  .k-calendar-nav-prev,
+  .k-calendar-nav-next {
+    border-radius: 999px;
+  }
+  .k-calendar-nav-next {
+    margin-left: 4px;
+  }
+  .k-button-md.k-icon-button {
+    color: #959db3;
+    &:hover {
+      background: #f5f6f8 !important;
+    }
+  }
+  .k-calendar-thead {
+    display: none;
+  }
+  .k-link {
+    border-radius: 999px;
+    font-weight: 500;
+    box-shadow: none !important;
+  }
+  .k-calendar-td:hover {
+    outline: 2px solid #008000;
+    border-radius: 999px;
+  }
+  .k-calendar .k-calendar-td.k-selected .k-link {
+    background-color: #008000;
+  }
+  .k-other-month {
+    color: #fff;
+    pointer-events: none;
+  }
+  .k-calendar-header {
+    margin: 0 4px;
+    padding-inline: 0;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .k-calendar-view {
+    min-height: 0;
+    width: 224px;
+  }
+  .k-button-flat-primary {
+    color: #5a6276;
+    font-weight: bold;
+    text-transform: capitalize;
+    &:hover {
+      background: none;
+    }
+    &:active {
+      background: none;
+    }
+  }
+  .k-calendar-table {
+    margin: 0;
+  }
+
+  .k-svg-i-caret-alt-right::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    content: "\f077" !important;
+    font-size: 11px !important;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  // .k-svg-i-caret-alt-down::before {
+  //   font-family: "Font Awesome 6 Free" !important;
+  //   font-weight: 900 !important;
+  //   content: "\f078" !important;
+  //   font-size: 11px !important;
+  //   z-index: 99;
+  //   cursor: pointer;
+  // }
+  // .k-svg-i-caret-alt-right svg,
+  // .k-svg-i-caret-alt-down svg {
+  //   display: none !important;
+  // }
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 250px;
+    width: 244px;
+    padding: 10px 25px 0 15px;
+    border-top: 1px solid #959db3;
+    margin-left: -14px;
+  }
+  .radio-container {
+    display: flex;
+    align-items: center;
+    input {
+      cursor: pointer;
+      margin: 0 5px 0 0;
+    }
+  }
+  .dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dropdown {
+      width: 104px;
+      background: #fff;
+      border: none;
+    }
+    div {
+      display: flex;
+      gap: 5px;
+      button {
+        border-radius: 999px;
+        padding: 7px 5px;
+        border: 0px;
+        background: #fff;
+        color: #26282e;
+        cursor: pointer;
+        &:hover {
+          background: #008000;
+          color: #fff;
+        }
+        &:disabled {
+          background: #fff;
+          color: #ababab;
+        }
+      }
+    }
+    .active-btn {
+      background: #008000;
+      color: #fff;
+    }
+  }
+
+  .time {
+    position: absolute;
+    margin: 0;
+    font-weight: normal;
+    top: 6px;
+    left: 140px;
+  }
+  .k-list-item {
+    font-family: "Mulish", serif;
+    font-size: 11px;
+    &:hover {
+      background: #00800033;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .k-list-item.k-selected {
+    background: #008000;
+    box-shadow: none;
+  }
+  .k-button:active::before,
+  .k-button.k-active::before {
+    opacity: 0;
+  }
+
+
+}

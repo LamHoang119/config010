@@ -1,0 +1,51 @@
+<!-- TEST -->
+<div class="datetime-picker-container">
+  <p class="time">
+    {{ defaultValue }}
+  </p>
+  <kendo-datepicker
+    [disabledDates]="disablePastDates"
+    calendarType="classic"
+    class="datetimepick"
+    [(ngModel)]="value"
+    (valueChange)="onValueChange($event)"
+    [popupSettings]="{ appendTo: 'component', popupClass: 'cusDatetimepicker' }"
+  >
+    <ng-template kendoCalendarHeaderTitleTemplate let-date>
+      {{ date | monthFormat }}
+      <div class="bottom" (click)="$event.stopPropagation()">
+        <div class="radio-container">
+          <input type="radio" (click)="onAllDay()" />
+          <a>Cả ngày</a>
+        </div>
+        <div class="dropdown-container">
+          <kendo-dropdownlist
+            class="dropdown"
+            [(ngModel)]="defaultValue"
+            [data]="ListHours"
+            (valueChange)="onTimeChange($event)"
+            [disabled]="isAllDay"
+          ></kendo-dropdownlist>
+          <div>
+            <button
+              [ngClass]="{ 'active-btn': !isPm }"
+              (click)="toggleAmPm(false)"
+              [disabled]="isAllDay"
+              [class.active]="!isPm"
+            >
+              AM
+            </button>
+            <button
+              [ngClass]="{ 'active-btn': isPm }"
+              (click)="toggleAmPm(true)"
+              [disabled]="isAllDay"
+              [class.active]="isPm"
+            >
+              PM
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </kendo-datepicker>
+</div>
