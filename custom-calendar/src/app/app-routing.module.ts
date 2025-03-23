@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'in-config',
     loadChildren: () =>
-      import('../app/in-app/in-config/shared/services/in-config.module').then(
+      import('./in-app/in-config/in-config.module').then(
         (m) => m.InConfigModule
       ),
   },
