@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Output} from '@angular/core';
+import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-datetimepicker',
@@ -12,13 +12,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class DatetimepickerComponent implements ControlValueAccessor{
+export class DatetimepickerComponent implements ControlValueAccessor {
   public value: Date = new Date();
   public isAllDay: boolean = false;
   public isPm: boolean = false;
   public defaultValue: string = 'hh : mm';
-
-@Output() valueChange = new EventEmitter()
+  public tempValue: string = 'hh : mm';
+  @Output() valueChange = new EventEmitter();
+  @Output() open = new EventEmitter<any>();
+  @Output() close = new EventEmitter<any>();
+  @Output() focus = new EventEmitter<any>();
+  @Output() blur = new EventEmitter<any>();
   // Hàm xác định các ngày đã qua
   public disablePastDates = (date: Date): boolean => {
     const today = new Date();
@@ -27,7 +31,6 @@ export class DatetimepickerComponent implements ControlValueAccessor{
   };
   //List giờ
   public ListHours: string[] = [
-    '00:00',
     '00:30',
     '01:00',
     '01:30',
@@ -68,10 +71,11 @@ export class DatetimepickerComponent implements ControlValueAccessor{
     this.onTouched = fn;
   }
 
-  onTimeChange(newValue: string) {
-    this.defaultValue = newValue;
+  onTimeChangeOnBlur() {
+    this.defaultValue = this.tempValue;
     this.updateTimeFormat();
   }
+
   toggleAmPm(isPm: boolean) {
     if (this.isAllDay) return;
     this.isPm = isPm;
@@ -89,20 +93,38 @@ export class DatetimepickerComponent implements ControlValueAccessor{
       if (hour >= 12) hour -= 12; // Chuyển từ PM về AM
     }
 
-    this.defaultValue = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+    this.defaultValue = `${hour.toString().padStart(2, '0')}:${minute
+      .toString()
+      .padStart(2, '0')}`;
     this.onChange(this.defaultValue);
   }
   onAllDay() {
-    this.isAllDay = !this.isAllDay;
-    console.log(this.isAllDay);
+    console.log('Cả ngày:', this.isAllDay);
     if (this.isAllDay) {
-      this.defaultValue = 'cả ngày';
+      this.defaultValue = '';
+      this.tempValue = '';
     } else {
       this.defaultValue = this.ListHours[0];
+      this.tempValue = this.defaultValue;
     }
   }
 
-  onValueChange(data: Date){
-      this.valueChange.emit(data)
+  onValueChange(data: Date) {
+    this.valueChange.emit(data);
+  }
+  onOpen(event: any) {
+    this.open.emit(event);
+  }
+
+  onClose(event: any) {
+    this.close.emit(event);
+  }
+
+  onFocus(event: any) {
+    this.focus.emit(event);
+  }
+
+  onBlur(event: any) {
+    this.blur.emit(event);
   }
 }

@@ -11,7 +11,6 @@
     }
   }
 
-
   .k-input {
     align-items: center;
     flex-direction: row-reverse;
@@ -75,6 +74,7 @@
   }
   .k-calendar-view {
     min-height: 0;
+    padding: 5px;
     width: 224px;
   }
   .k-button-flat-primary {
@@ -192,6 +192,4 @@
   .k-button.k-active::before {
     opacity: 0;
   }
-
-
 }

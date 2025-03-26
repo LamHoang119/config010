@@ -25,25 +25,29 @@ export class MonthFormatPipe implements PipeTransform {
     let monthNumber: number | null = null;
     let year: string = '';
 
-    // Nếu là Date, lấy tháng và năm trực tiếp
+    // Nếu là Date
     if (value instanceof Date) {
       monthNumber = value.getMonth() + 1;
       year = value.getFullYear().toString();
     }
 
-    // Nếu là chuỗi "tháng 3 2025"
-    if (typeof value === 'string') {
+    // Nếu là chuỗi "tháng 3 2025" thì xử lý riêng
+    else if (typeof value === 'string' && value.startsWith('tháng')) {
       const parts = value.split(' '); // ["tháng", "3", "2025"]
-      if (parts.length < 3) return 'Không xác định';
-
-      monthNumber = parseInt(parts[1], 10);
-      year = parts[2];
-
-      if (isNaN(monthNumber)) return 'Không xác định';
+      if (parts.length >= 3) {
+        monthNumber = parseInt(parts[1], 10);
+        year = parts[2];
+        if (isNaN(monthNumber)) return value;
+      }
     }
 
+    // Nếu không xử lý được thì return nguyên chuỗi (ví dụ "2025", "2020 - 2029")
+    if (!monthNumber || !year) return value.toString();
+
     // Tìm tháng trong danh sách
-    const foundMonth = this.months.find(m => m.month === monthNumber);
-    return foundMonth ? `${foundMonth.monthText} ${year}` : 'Không xác định';
+    const foundMonth = this.months.find((m) => m.month === monthNumber);
+    return foundMonth
+      ? `${foundMonth.monthText} ${year}`
+      : `${monthNumber}/${year}`;
   }
 }

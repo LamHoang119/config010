@@ -4,26 +4,30 @@
     {{ defaultValue }}
   </p>
   <kendo-datepicker
+    [(ngModel)]="value"
+    (valueChange)="onValueChange($event)"
+    (open)="onOpen($event)"
+    (close)="onClose($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
     [disabledDates]="disablePastDates"
     calendarType="classic"
     class="datetimepick"
-    [(ngModel)]="value"
-    (valueChange)="onValueChange($event)"
     [popupSettings]="{ appendTo: 'component', popupClass: 'cusDatetimepicker' }"
   >
     <ng-template kendoCalendarHeaderTitleTemplate let-date>
       {{ date | monthFormat }}
       <div class="bottom" (click)="$event.stopPropagation()">
         <div class="radio-container">
-          <input type="radio" (click)="onAllDay()" />
+          <input type="checkbox" [(ngModel)]="isAllDay" (change)="onAllDay()" />
           <a>Cả ngày</a>
         </div>
         <div class="dropdown-container">
           <kendo-dropdownlist
             class="dropdown"
-            [(ngModel)]="defaultValue"
+            [(ngModel)]="tempValue"
             [data]="ListHours"
-            (valueChange)="onTimeChange($event)"
+            (blur)="onTimeChangeOnBlur()"
             [disabled]="isAllDay"
           ></kendo-dropdownlist>
           <div>

@@ -9,13 +9,39 @@ p {
   margin-top: 20px;
 }
 
-
-::ng-deep{
-  app-datetimepicker{
-    .cusDatetimepicker{
+::ng-deep {
+  app-datetimepicker {
+    .cusDatetimepicker {
       kendo-multiviewcalendar:nth-of-type(1) {
         padding-bottom: 105px;
       }
     }
   }
+.radio-container input {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #008000;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.radio-container input:checked::before {
+  content: "✓";
+  color: #fff;
+  background-color: #008000;
+  text-align: center;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: -1.5px;
+}
 }

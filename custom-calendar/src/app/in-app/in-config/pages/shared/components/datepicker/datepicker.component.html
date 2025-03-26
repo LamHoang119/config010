@@ -1,5 +1,10 @@
-<!-- DATE PICKER -->
 <kendo-datepicker
+  [(ngModel)]="value"
+  (valueChange)="onValueChange($event)"
+  (open)="onOpen($event)"
+  (close)="onClose($event)"
+  (focus)="onFocus($event)"
+  (blur)="onBlur($event)"
   [disabledDates]="disablePastDates"
   calendarType="classic"
 >

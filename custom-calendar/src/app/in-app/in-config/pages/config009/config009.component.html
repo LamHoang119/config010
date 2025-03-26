@@ -1,5 +1,17 @@
-<app-datepicker></app-datepicker>
-  <app-datetimepicker
-    [(ngModel)]="date"
-    (valueChange)="onValueChange($event)"
-  ></app-datetimepicker>
+<app-datepicker
+  [(ngModel)]="selectedDate"
+  (valueChange)="onDateChange($event)"
+  (open)="onOpen($event)"
+  (close)="onClose($event)"
+  (focus)="onFocus($event)"
+  (blur)="onBlur($event)"
+></app-datepicker>
+
+<app-datetimepicker
+  [(ngModel)]="date"
+  (valueChange)="onValueChange($event)"
+  (open)="onOpen($event)"
+  (close)="onClose($event)"
+  (focus)="onFocus($event)"
+  (blur)="onBlur($event)"
+></app-datetimepicker>
