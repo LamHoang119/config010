@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InConfigComponent } from './in-config.component';
 import { Config009Component } from './pages/config009/config009.component';
 import { Config010Component } from './pages/config010/config010.component';
-
+import { Config011Component } from './pages/config011/config011.component';
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'app-config010',
+        redirectTo: 'app-config011',
         pathMatch: 'full',
       },
       {
@@ -21,6 +21,10 @@ const routes: Routes = [
       {
         path: 'app-config010',
         component: Config010Component,
+      },
+      {
+        path: 'app-config011',
+        component: Config011Component,
       },
     ],
   },

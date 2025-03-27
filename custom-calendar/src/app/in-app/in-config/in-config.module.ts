@@ -14,6 +14,7 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { MonthFormatPipe } from './pages/shared/components/pipes/month-format.pipe';
 import { InputsModule } from '@progress/kendo-angular-inputs';
+import { Config011Component } from './pages/config011/config011.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     TextareaComponent,
     TextboxComponent,
     NumericTextBoxComponent,
+    Config011Component,
   ],
   imports: [
     CommonModule,
