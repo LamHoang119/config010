@@ -1,0 +1,67 @@
+::ng-deep {
+  .container {
+    display: flex;
+    font-size: 13px;
+    font-family: "Mulish", sans-serif;
+  }
+
+  .head {
+    display: block;
+    margin: 10px 0;
+  }
+  .notice {
+    color: rgb(228, 0, 0);
+  }
+  .ttcs-container {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    .ttcs {
+      font-size: 13px;
+      font-weight: normal;
+      width: calc(100vw - 250px);
+      display: flex;
+      gap: 30px;
+      background: #fff;
+      padding: 20px 0 20px 10px;
+      kendo-label {
+        color: #959db3;
+        font-weight: bold;
+      }
+      .col-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .col-1-item {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          .textbox {
+            max-width: 245px !important;
+            width: 245px;
+            height: 33px;
+            border: 2px solid #dbdee7;
+          }
+        }
+      }
+      .col-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: calc(100% - 300px);
+        .col-2-item {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          .textbox {
+            max-width: 100% !important;
+            width: 100%;
+            height: 33px;
+            border: 2px solid #dbdee7;
+            padding: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}

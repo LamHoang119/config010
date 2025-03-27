@@ -1,1 +1,50 @@
-<div>asdasdasdasdasdasdsad</div>
+<div class="container">
+  <app-sidebar></app-sidebar>
+  <div class="main">
+    <app-header></app-header>
+    <app-breadcrum></app-breadcrum>
+    <div class="ttcs-container">
+      <kendo-label class="head">Thông tin chính sách Onboarding</kendo-label>
+      <div class="ttcs">
+        <div class="col-1">
+          <div class="col-1-item">
+            <kendo-label
+              >Mã chính sách <span class="notice">(*)</span></kendo-label
+            >
+            <kendo-textbox class="textbox" placeholder="CSOB1"></kendo-textbox>
+          </div>
+          <div class="col-1-item">
+            <kendo-label
+              >Thời gian hiệu lực <span class="notice">(*)</span></kendo-label
+            >
+            <app-datepicker class="datepicker"></app-datepicker>
+          </div>
+          <div class="col-1-item">
+            <kendo-label
+              >Phạm vi áp dụng <span class="notice">(*)</span></kendo-label
+            >
+            <kendo-textbox class="textbox" placeholder="CSOB1"></kendo-textbox>
+          </div>
+          <div class="col-1-item">
+            <kendo-label>Tình trạng</kendo-label>
+            <kendo-label style="color: #000">Đang soạn thảo</kendo-label>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="col-2-item">
+            <kendo-label>Tiêu đề <span class="notice">(*)</span></kendo-label>
+            <kendo-textbox class="textbox" placeholder="CSOB1"></kendo-textbox>
+          </div>
+          <div class="col-2-item">
+            <kendo-label>Mô tả <span class="notice">(*)</span></kendo-label>
+            <kendo-textbox
+              style="height: 97px; display: flex; align-items: start"
+              class="textbox"
+              placeholder="CSOB1"
+            ></kendo-textbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+.breadcrum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #bdc2d2;
+  margin: 0 5px;
+  padding: 14px 0 13px 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  gap: 50px;
+  width: calc(100vw - 245px); 
+}
+.breadcrum::-webkit-scrollbar {
+  height: 4px;
+}
+
+.breadcrum::-webkit-scrollbar-thumb {
+  background-color: #008000;
+  border-radius: 2px;
+}
+
+.breadcrum::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}
+.breadcrum .left-bread {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.breadcrum .left-bread a {
+  color: #008000;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Mulish", serif;
+}
+.breadcrum .left-bread a:last-child {
+  color: #959db3;
+}
+.breadcrum .right {
+  display: flex;
+  gap: 10px;
+}
+.breadcrum .right div {
+  background: #1a6634;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  font-family: "Mulish", serif;
+  display: flex;
+  gap: 5px;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
